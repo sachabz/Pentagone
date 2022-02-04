@@ -20,7 +20,9 @@
       <router-link to="/calculator">
         <el-menu-item index="4-1">Vision Globale</el-menu-item>
       </router-link>
-      <el-menu-item index="4-2">Cashflow</el-menu-item>
+      <router-link to="/cashflow">
+        <el-menu-item index="4-2">Cashflow</el-menu-item>
+      </router-link>
       <el-menu-item index="4-3">Patrimoine</el-menu-item>
     </el-sub-menu>
   </el-menu>
