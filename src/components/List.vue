@@ -5,7 +5,7 @@
                 <span>{{ title }}</span>
             </div>
         </template>
-        <el-row :gutter="20" v-for="row of rows" :key="row.name">
+        <el-row :gutter="20" v-for="(row, index) of rows" :key="index">
             <el-col :span="8">
                 <div class="grid-content">{{ row.name }}</div>
             </el-col>
@@ -15,17 +15,17 @@
             <el-col :span="8">
                 <div class="grid-content">
                     <el-icon :size="20" @click="open(row)">
-                        <edit />
+                        <edit class="blue-link" />
                     </el-icon>
                 </div>
             </el-col>
         </el-row>
-        <el-row :gutter="20">
+        <el-row :gutter="20" class="total">
             <el-col :span="8">
                 <div class="grid-content">Total</div>
             </el-col>
             <el-col :span="8">
-                <div class="grid-content">{{ total }} €</div>
+                <div class="grid-content">{{ cashflow.getTotal(index) }} €</div>
             </el-col>
             <el-col :span="8">
                 <div class="grid-content"></div>
@@ -51,21 +51,22 @@ interface Row {
 interface Props {
     title?: string;
     rows?: Row[];
+    index?: number;
 }
 const props = withDefaults(defineProps<Props>(), {
     title: "Titre",
     rows: () => [],
+    index: 0,
 });
 
 //pour utiliser les props dans le JS
-const { rows, title } = toRefs(props);
+const { rows, title, index } = toRefs(props);
 
 
 const total = computed(() => {
     let value = 0;
     for (const row of rows.value) {
         value += row.amount;
-        // rowStore.addItem(value);
     }
     return value;
 })
@@ -81,7 +82,7 @@ const open = (row: Row) => {
         .then(({ value }) => {
             ElMessage({
                 type: 'success',
-                message: `Le nouveau montant est:${value}`,
+                message: `Le nouveau montant de ${row.name} est: ${value} €`,
             })
             cashflow.updateRow(title.value, row.name, parseFloat(value));
         })
@@ -99,6 +100,14 @@ const open = (row: Row) => {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.total {
+    background-color: rgb(235, 235, 235);
+    font-weight: bold;
+    border: none;
 }
 
 .text {
@@ -110,9 +119,13 @@ const open = (row: Row) => {
 }
 
 .box-card {
-    width: 480px;
-    max-width: 480px;
+    width: 580px;
+    max-width: 580px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.blue-link {
+    color: #00c0ff;
 }
 </style>
