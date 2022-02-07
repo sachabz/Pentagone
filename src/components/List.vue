@@ -38,7 +38,11 @@
 <script lang="ts" setup>
 import { toRefs, ref, computed } from "vue";
 import { Edit } from "@element-plus/icons-vue";
-import { ElMessageBox, ElMessage } from 'element-plus'
+import { ElMessageBox, ElMessage } from "element-plus";
+import { useCashflowStore } from "../stores/cashflow";
+
+const cashflow = useCashflowStore();
+
 interface Row {
     name: string;
     amount: number;
@@ -54,17 +58,19 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 //pour utiliser les props dans le JS
-const { rows } = toRefs(props);
+const { rows, title } = toRefs(props);
+
 
 const total = computed(() => {
     let value = 0;
     for (const row of rows.value) {
         value += row.amount;
+        // rowStore.addItem(value);
     }
     return value;
 })
 
-const open = (row) => {
+const open = (row: Row) => {
     ElMessageBox.prompt(`Mettez le montant par mois de ${row.name}`, row.name, {
         confirmButtonText: 'Enregistrer',
         cancelButtonText: 'Annuler',
@@ -77,7 +83,7 @@ const open = (row) => {
                 type: 'success',
                 message: `Le nouveau montant est:${value}`,
             })
-            row.amount = parseFloat(value);
+            cashflow.updateRow(title.value, row.name, parseFloat(value));
         })
         .catch(() => {
             ElMessage({
