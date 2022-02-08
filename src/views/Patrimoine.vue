@@ -69,9 +69,13 @@ const patrimoine = usePatrimoineStore();
   background-size: cover;
   width: 100%;
   margin-top: 60px;
+  min-height: 100vh;
 }
 
 .bg-black {
   background-color: rgba(0, 0, 0, 0.363);
+  width: 100%;
+  margin-top: 60px;
+  min-height: 100vh;
 }
 </style>

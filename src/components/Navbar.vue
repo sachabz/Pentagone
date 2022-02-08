@@ -13,8 +13,12 @@
         <img src="../assets/logoPFv2.png" width="50" height="50" />
       </router-link>
     </el-menu-item>
-    <el-menu-item index="2">Le cabinet</el-menu-item>
-    <el-menu-item index="3">Nos services</el-menu-item>
+    <router-link to="/cabinet">
+      <el-menu-item index="2">Le cabinet</el-menu-item>
+    </router-link>
+    <router-link to="/service">
+      <el-menu-item index="3">Nos services</el-menu-item>
+    </router-link>
     <el-sub-menu index="4">
       <template #title>Calculator</template>
       <router-link to="/calculator">

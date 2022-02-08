@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    <Navbar />
-    <Banniere />
+    <div class="bg-black">
+      <Navbar />
+      <Banniere />
+    </div>
   </div>
 </template>
 
@@ -25,5 +27,12 @@ export default defineComponent({
   background-size: cover;
   width: 100%;
   margin-top: 60px;
+  min-height: 100vh;
+}
+.bg-black {
+  background-color: rgba(0, 0, 0, 0.363);
+  width: 100%;
+  margin-top: 60px;
+  min-height: 100vh;
 }
 </style>

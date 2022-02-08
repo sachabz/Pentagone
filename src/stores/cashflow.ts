@@ -101,6 +101,9 @@ export const useCashflowStore = defineStore({
       valueCF = valueA - valueB;
       return valueCF;
     },
+    getChartCashflow(): number[] {
+      return [this.getTotalActif, this.getTotalPassif];
+    }
   },
   actions: {
     updateRow(title: string, name: string, amount: number) {

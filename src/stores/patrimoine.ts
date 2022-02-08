@@ -18,7 +18,7 @@ export const usePatrimoineStore = defineStore({
         isImmo: false, isLiquide: true,
         rows: [
           { name: "Comptes courants", amount: 0 },
-          { name: "Livret A", amount: 0 },
+          { name: "Livret A", amount: 1 },
           { name: "LDD", amount: 0 },
           { name: "Autres", amount: 0 },
         ],
@@ -89,6 +89,9 @@ export const usePatrimoineStore = defineStore({
     getTotalPatrimoine(): number {
       return this.getTotalImmo + this.getTotalFiancier;
     },
+    getChartPatrimoine(): number[] {
+      return [this.getTotalImmo, this.getTotalFiancier];
+    }
   },
   actions: {
     updateRow(title: string, name: string, amount: number) {
