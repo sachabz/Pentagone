@@ -3,25 +3,28 @@
     <div class="bg-black">
       <Navbar />
       <!-- <Buttoncta nom="Voir les détails" ref="test1" /> -->
-      <el-space wrap fill alignment="flex-start">
-        <ListRecap
-          title="Cashflow Net par mois"
-          subtitle="Le cashflow, dont la traduction littérale est flux de liquidités,  est un indicateur qui permet de mesurer le flux de trésorerie."
-          :amountActif="cashflow.getTotalActif"
-          :amountPassif="cashflow.getTotalPassif"
-          :amountTotalCF="cashflow.getTotalCF"
-          actif="Actif"
-          passif="Passif"
-        />
-        <List
-          v-for="(list, index) of cashflow.rows"
-          :key="index"
-          :title="list.title"
-          :rows="list.rows"
-          :index="index"
-          :totalAmount="cashflow.getTotal(index)"
-        />
-      </el-space>
+      <main>
+        <el-space wrap fill alignment="flex-start">
+          <ListRecap
+            title="Cashflow Net par mois"
+            subtitle="Le cashflow, dont la traduction littérale est flux de liquidités,  est un indicateur qui permet de mesurer le flux de trésorerie."
+            :amount-actif="cashflow.getTotalActif"
+            :amount-passif="cashflow.getTotalPassif"
+            :amount-total-c-f="cashflow.getTotalCF"
+            title-amount-actif="Actif"
+            title-amount-passif="Passif"
+          />
+          <List
+            v-for="(list, index) of cashflow.rows"
+            :key="index"
+            :title="list.title"
+            :rows="list.rows"
+            :index="index"
+            :total-amount="cashflow.getTotal(index)"
+            :use-cashflow-store="true"
+          />
+        </el-space>
+      </main>
     </div>
   </div>
 </template>
@@ -30,8 +33,7 @@
 import Navbar from "../components/Navbar.vue";
 import List from "../components/List.vue";
 import ListRecap from "../components/ListRecap.vue";
-import Buttoncta from "../components/Utils/Buttoncta.vue";
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 import { useCashflowStore } from "../stores/cashflow";
 // const test1 = ref<typeof Buttoncta>();
 onMounted(() => {
@@ -60,8 +62,6 @@ const cashflow = useCashflowStore();
 //     ]
 //   }
 // ])
-
-
 </script>
 <style scoped>
 .home {
@@ -69,6 +69,7 @@ const cashflow = useCashflowStore();
   background-size: cover;
   width: 100%;
   margin-top: 60px;
+  min-height: 100vh;
 }
 
 .bg-black {

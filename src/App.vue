@@ -7,6 +7,7 @@ import { RouterView } from "vue-router";
     <transition name="route" mode="out-in">
       <component :is="Component"></component>
     </transition>
+    <el-backtop />
   </router-view>
 </template>
 
@@ -27,6 +28,10 @@ import { RouterView } from "vue-router";
       color: #42b983;
     }
   }
+}
+.el-message-box {
+  width: calc(95% - 40px) !important;
+  max-width: 420px;
 }
 .fade-enter-active,
 .fade-leave-active {
@@ -55,5 +60,10 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+main {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 </style>

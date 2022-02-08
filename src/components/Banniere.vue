@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Buttoncta from './Utils/Buttoncta.vue';
+import Buttoncta from "./Utils/Buttoncta.vue";
 
 const gotourl = () => {
   window.open(location.href = "https://docs.google.com/forms/d/e/1FAIpQLSf4WN2mihHlaWjBK10gfKkz-2Slb2CTlaPAX2fHwC0ScU0szQ/viewform?usp=sf_link");
@@ -22,5 +22,12 @@ h1 {
 .banniere {
   padding-bottom: 80px;
   padding-top: 60px;
+}
+
+.home {
+  background-image: url("../assets/bg2.jpg");
+  background-color: rgba(0, 0, 0, 0.582);
+  background-size: cover;
+  width: 100%;
 }
 </style>

@@ -15,6 +15,6 @@ export const useCounterStore = defineStore({
     },
     updatedName(name: string) {
       this.name = name;
-    }
+    },
   },
 });

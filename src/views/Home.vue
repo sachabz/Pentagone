@@ -14,7 +14,7 @@ export default defineComponent({
   name: "HomeView",
   components: {
     Navbar,
-    Banniere
+    Banniere,
   },
 });
 </script>
@@ -27,4 +27,3 @@ export default defineComponent({
   margin-top: 60px;
 }
 </style>
-
