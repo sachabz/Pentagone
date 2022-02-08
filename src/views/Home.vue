@@ -20,5 +20,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.home {
+  background-image: url("../assets/bg2.jpg");
+  background-size: cover;
+  width: 100%;
+  margin-top: 60px;
+}
 </style>
 

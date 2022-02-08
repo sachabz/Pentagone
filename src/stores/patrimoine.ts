@@ -1,38 +1,33 @@
 import { defineStore } from "pinia";
 
-export const useCashflowStore = defineStore({
-    id: "cashflow",
+export const usePatrimoineStore = defineStore({
+    id: "patrimoine",
     state: () => ({
         rows: [
             {
-                title: "Revenus actifs par mois", isActif: true, rows: [
-                    { name: "Salaire", amount: 3000 },
-                    { name: "Autres", amount: 0 }
-                ]
-            },
-            {
-                title: "Revenus Passifs par mois", isActif: true, rows: [
+                title: "Actif Immobilier", isImmo: true, rows: [
                     { name: "Immobilier locatif", amount: 0 },
-                    { name: "Dividendes", amount: 0 },
                     { name: "Autres", amount: 0 }
                 ]
             },
             {
-                title: "Depenses par mois", isPassif: true, rows: [
-                    { name: "Impôts sur le revenu", amount: 0 },
-                    { name: "Loyer", amount: 0 },
-                    { name: "Taxes d'habitation", amount: 0 },
-                    { name: "Charges logement (edf, internet...", amount: 0 },
-                    { name: "Transport", amount: 0 },
-                    { name: "Nourriture", amount: 0 },
-                    { name: "Loisir", amount: 0 },
+                title: "Actifs Financiers liquide", isFinancier: true, rows: [
+                    { name: "Comptes courants", amount: 0 },
+                    { name: "Livret A", amount: 0 },
+                    { name: "LDD", amount: 0 },
                     { name: "Autres", amount: 0 }
                 ]
             },
             {
-                title: "Dépenses Passifs par mois", isPassif: true, rows: [
+                title: "Actifs Financiers non liquides", isImmo: true, rows: [
+                    { name: "PEA", amount: 0 },
+                    { name: "PEL", amount: 0 },
+                    { name: "Autres", amount: 0 }
+                ]
+            },
+            {
+                title: "Passifs Immobilier (crédits)", isPassif: true, rows: [
                     { name: "Immobilier locatif", amount: 0 },
-                    { name: "Dividendes", amount: 0 },
                     { name: "Autres", amount: 0 }
                 ]
             }
@@ -48,40 +43,36 @@ export const useCashflowStore = defineStore({
                 return value;
             }
         },
-        getTotalActif: (state) => {
-            let valueActif = 0;
+        getTotalImmo: (state) => {
+            let valueImmo = 0;
             for (const table of state.rows) {
-                if (table.isActif) {
+                if (table.isImmo) {
                     for (const row of table.rows) {
-                        valueActif += row.amount;
+                        valueImmo += row.amount;
                     }
                 }
             }
-            return valueActif;
+            return valueImmo;
         },
-        getTotalPassif: (state) => {
-            let valuePassif = 0;
+        getTotalFiancier: (state) => {
+            let valueFinancier = 0;
             for (const table of state.rows) {
-                if (table.isPassif) {
+                if (table.isFinancier) {
                     for (const row of table.rows) {
-                        valuePassif += row.amount;
+                        valueFinancier += row.amount;
                     }
                 }
             }
-            return valuePassif;
+            return valueFinancier;
         },
-        getTotalCF: () => {
+        getTotalPatrimoine: () => {
             if (this !== undefined) {
                 // let valueCF = 0;
                 // const valueA = getTotalActif();
                 // const valueB = getTotalPassif();
                 // valueCF = valueA - valueB;
                 // return valueCF;
-                const test = this.getTotalActif() + 9;
-                console.log(test);
-                return test;
-            } else {
-                console.log(this);
+                return this.getTotalActif + 9
             }
         },
     },

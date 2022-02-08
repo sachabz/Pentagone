@@ -25,7 +25,7 @@
                 <div class="grid-content">Total</div>
             </el-col>
             <el-col :span="8">
-                <div class="grid-content">{{ cashflow.getTotal(index) }} €</div>
+                <div class="grid-content">{{ totalAmount }} €</div>
             </el-col>
             <el-col :span="8">
                 <div class="grid-content"></div>
@@ -52,24 +52,26 @@ interface Props {
     title?: string;
     rows?: Row[];
     index?: number;
+    totalAmount?: number;
 }
 const props = withDefaults(defineProps<Props>(), {
     title: "Titre",
     rows: () => [],
     index: 0,
+    totalAmount: 0,
 });
 
 //pour utiliser les props dans le JS
-const { rows, title, index } = toRefs(props);
+const { rows, title, index, totalAmount } = toRefs(props);
 
 
-const total = computed(() => {
-    let value = 0;
-    for (const row of rows.value) {
-        value += row.amount;
-    }
-    return value;
-})
+// const total = computed(() => {
+//     let value = 0;
+//     for (const row of rows.value) {
+//         value += row.amount;
+//     }
+//     return value;
+// })
 
 const open = (row: Row) => {
     ElMessageBox.prompt(`Mettez le montant par mois de ${row.name}`, row.name, {
@@ -123,6 +125,8 @@ const open = (row: Row) => {
     max-width: 580px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 .blue-link {

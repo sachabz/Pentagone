@@ -5,21 +5,21 @@
       <!-- <Buttoncta nom="Voir les détails" ref="test1" /> -->
       <el-space wrap fill alignment="flex-start">
         <ListRecap
-          title="Cashflow Net par mois"
-          subtitle="Le cashflow, dont la traduction littérale est flux de liquidités,  est un indicateur qui permet de mesurer le flux de trésorerie."
-          :amountActif="cashflow.getTotalActif"
-          :amountPassif="cashflow.getTotalPassif"
-          :amountTotalCF="cashflow.getTotalCF"
-          actif="Actif"
-          passif="Passif"
+          title="Patrimoine Net"
+          subtitle="Le patrimoine net est le montant total des actifs détenus par un ménage (patrimoine brut) duquel est déduit le montant du capital qu'il doit encore au titre de ses emprunts contractés pour acquérir un bien immobilier, un bien d'équipement, ou pour tout autre motif personnel ou professionnel."
+          :amountActif="patrimoine.getTotalImmo"
+          :amountPassif="patrimoine.getTotalFiancier"
+          :amountTotalCF="patrimoine.getTotalPatrimoine"
+          actif="Immobilier"
+          passif="Financier"
         />
         <List
-          v-for="(list, index) of cashflow.rows"
+          v-for="(list, index) of patrimoine.rows"
           :key="index"
           :title="list.title"
           :rows="list.rows"
           :index="index"
-          :totalAmount="cashflow.getTotal(index)"
+          :totalAmount="patrimoine.getTotal(index)"
         />
       </el-space>
     </div>
@@ -32,14 +32,14 @@ import List from "../components/List.vue";
 import ListRecap from "../components/ListRecap.vue";
 import Buttoncta from "../components/Utils/Buttoncta.vue";
 import { ref, onMounted } from "vue";
-import { useCashflowStore } from "../stores/cashflow";
+import { usePatrimoineStore } from "../stores/patrimoine";
 // const test1 = ref<typeof Buttoncta>();
 onMounted(() => {
   // console.log(test1.value);
   // test1.value.shout();
 });
 
-const cashflow = useCashflowStore();
+const patrimoine = usePatrimoineStore();
 
 // const lists = ref([
 //   {

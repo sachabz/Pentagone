@@ -1,7 +1,7 @@
 <template>
   <el-menu
     :default-active="activeIndex"
-    class="el-menu"
+    class="el-menu sticky"
     mode="horizontal"
     background-color="#E0E0E0"
     text-color="#0C1C52"
@@ -23,7 +23,9 @@
       <router-link to="/cashflow">
         <el-menu-item index="4-2">Cashflow</el-menu-item>
       </router-link>
-      <el-menu-item index="4-3">Patrimoine</el-menu-item>
+      <router-link to="/patrimoine">
+        <el-menu-item index="4-3">Patrimoine</el-menu-item>
+      </router-link>
     </el-sub-menu>
   </el-menu>
 </template>
@@ -57,5 +59,13 @@ a {
 
 .el-menu {
   padding-left: 4px;
+  overflow: hidden;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 </style>
