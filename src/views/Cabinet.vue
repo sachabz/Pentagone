@@ -3,6 +3,7 @@
     <div class="bg-black">
       <Navbar />
       <TitleSection title="Le Cabinet" />
+      <Hero />
       <ParagrapheMain
         content="PENTAGONE FINANCE est un cabinet créé par 3 associés, chacun expert dans son domaine : "
       />
@@ -16,7 +17,7 @@
         content="Grâce à ces différentes compétences, le cabinet PENTAGONE FINANCE pourra vous accompagner à atteindre vos différents objectifs de vie, et bien sûr vos différents objectifs financiers : 
 "
       />
-      <ParagrapheList :rows="objectifs" :show-icon="false" />
+      <ParagrapheList :rows="objectifs" :show-icon="true" />
       <ParagrapheMain
         content="L’objectif du cabinet PENTAGONE FINANCE est de vous offrir un service bien supérieur à celui de votre banque, grâce à son expertise poussée en ingénierie financière et patrimoniale, mais aussi grâce à un choix méticuleux de ses différents partenaires."
       />
@@ -27,12 +28,14 @@
   </div>
 </template>
 
+
 <script setup lang="ts">
 import { ref } from "vue";
 import Navbar from "../components/Navbar.vue";
 import TitleSection from "@/components/Utils/TitleSection.vue";
 import ParagrapheMain from "@/components/Utils/ParagrapheMain.vue";
 import ParagrapheList from "@/components/Utils/ParagrapheList.vue";
+import Hero from "@/components/Hero.vue";
 
 const expertises = ref(["Ingénierie patrimoniale", "Investissement immobilier", "Investissement financier"])
 const objectifs = ref(["Vous constituer un patrimoine", "Vous constituer des revenus grâce à vos investissements", "Préparer votre retraite (ou partir en retraite plus tôt)", "Payer moins d’impôts (IR, IFI, IS, nous optimisons votre fiscalité globale)", "Protéger votre famille", "Optimiser la transmission de votre patrimoine", "Vous avez d’autres projets : nous vous écoutons sur vos différents projets de vie, et nous vous aidons à choisir les meilleures stratégies patrimoniales pour réussir votre projet sur le plan financier"])
