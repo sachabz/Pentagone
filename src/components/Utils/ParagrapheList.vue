@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <ul>
+  <div class="bg-white">
+    <ul class="text-gray-700">
       <li v-for="(row, index) of rows" :key="index">
         <el-icon v-if="showIcon === true">
           <home-filled />
         </el-icon>
-        <p>{{ row }}</p>
+        <p>- {{ row }}</p>
       </li>
     </ul>
   </div>
@@ -29,10 +29,6 @@ withDefaults(defineProps<Props>(), {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h1 {
-  padding: 40px 20px 0px;
-  color: white;
-}
 ul {
   list-style-type: none;
   padding: 0;
@@ -42,9 +38,5 @@ li {
   margin: 0 10px;
   padding-left: 20px;
   padding-right: 20px;
-  color: white;
-}
-a {
-  color: #42b983;
 }
 </style>

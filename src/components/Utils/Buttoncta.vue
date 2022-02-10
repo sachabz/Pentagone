@@ -1,5 +1,5 @@
 <template>
-  <el-button color="#0C1C52" style="color: white" round>
+  <el-button color="#275AD8" style="color: white" round>
     {{ nom }}
     <el-icon class="el-icon--right">
       <ArrowRight />
@@ -10,12 +10,12 @@
 <script setup lang="ts">
 import { ArrowRight } from "@element-plus/icons-vue";
 
-import { defineProps, toRefs, withDefaults, defineExpose } from "vue";
+import { defineProps, withDefaults, defineExpose } from "vue";
 
 interface Props {
   nom?: string;
 }
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   nom: "ahah",
 });
 

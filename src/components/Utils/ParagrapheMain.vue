@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-gray-700 bg-white">
     <p>{{ content }}</p>
   </div>
 </template>
@@ -20,10 +20,8 @@ withDefaults(defineProps<Props>(), {
 <style scoped lang="scss">
 h1 {
   padding: 40px 20px 0px;
-  color: white;
 }
 p {
-  color: white;
   padding-left: 80px;
   padding-right: 80px;
 }
@@ -34,8 +32,5 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 </style>

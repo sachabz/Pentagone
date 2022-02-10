@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <h1>{{ title }}.</h1>
-    <el-divider></el-divider>
+  <div class="md:flex md:items-center md:justify-between bg-white padding-tittle">
+    <div class="flex-1 min-w-0">
+      <h1 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">{{ title }}</h1>
+    </div>
   </div>
 </template>
 
@@ -19,19 +20,8 @@ withDefaults(defineProps<Props>(), {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h1 {
-  padding: 40px 20px 0px;
-  color: white;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.padding-tittle {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 </style>

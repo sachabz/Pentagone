@@ -10,7 +10,7 @@
   >
     <el-menu-item index="1">
       <router-link to="/">
-        <img src="../assets/logoPFv2.png" width="50" height="50" />
+        <img src="../assets/logoPFv3.png" width="50" height="50" />
       </router-link>
     </el-menu-item>
     <router-link to="/cabinet">

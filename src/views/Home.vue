@@ -3,22 +3,18 @@
     <div class="bg-black">
       <Navbar />
       <Banniere />
+      <EmailVue />
+      <SectionHomeMetrics />
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import Navbar from "../components/Navbar.vue";
-import Banniere from "@/components/Banniere.vue";
+import Banniere from "@/components/Home/Banniere.vue";
+import EmailVue from "@/components/EmailVue.vue";
+import SectionHomeMetrics from "@/components/Home/SectionHomeMetrics.vue";
 
-export default defineComponent({
-  name: "HomeView",
-  components: {
-    Navbar,
-    Banniere,
-  },
-});
 </script>
 
 <style scoped>
