@@ -16,9 +16,9 @@
     <router-link to="/cabinet">
       <el-menu-item index="2">Le cabinet</el-menu-item>
     </router-link>
-    <router-link to="/service">
+    <!-- <router-link to="/service">
       <el-menu-item index="3">Nos services</el-menu-item>
-    </router-link>
+    </router-link>-->
     <el-sub-menu index="4">
       <template #title>Calculator</template>
       <router-link to="/calculator">

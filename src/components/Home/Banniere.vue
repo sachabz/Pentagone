@@ -7,9 +7,9 @@ const gotourl = () => {
 
 <template>
   <div class="banniere">
-    <video autoplay muted loop id="myVideo">
+    <!-- <video autoplay muted loop id="myVideo">
       <source src="../assets/villa.mp4" type="video/mp4" autoplay />
-    </video>
+    </video>-->
     <div class="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8 content">
       <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
         <span class="block">Pentagone Finance</span>
@@ -38,12 +38,13 @@ const gotourl = () => {
 <style scoped>
 .banniere {
   padding-bottom: 80px;
-  padding-top: 0px;
+  padding-top: 60px;
   background: rgba(0, 0, 0, 0.5);
-  position: relative;
+  /* position: relative; */
+  z-index: 3;
 }
 
-#myVideo {
+/* #myVideo {
   right: 0;
   bottom: 0;
   min-width: 100%;
@@ -51,17 +52,16 @@ const gotourl = () => {
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
   object-fit: cover;
-  padding-top: 60px;
+  padding-top: 0px;
   opacity: 0.4;
-}
+}  */
 
 .content {
   bottom: 0;
   color: #f1f1f1;
   width: 100%;
-  position: relative;
-  z-index: 10;
-  padding-top: 60;
+  /* position: relative; */
+  padding-top: 0px;
 }
 </style>
 
