@@ -14,15 +14,18 @@
             title-amount-actif="Immobilier"
             title-amount-passif="Financier"
           />
-          <List
-            v-for="(list, index) of patrimoine.rows"
-            :key="index"
-            :title="list.title"
-            :rows="list.rows"
-            :index="index"
-            :total-amount="patrimoine.getTotal(index)"
-            :use-cashflow-store="false"
-          />
+          <TransitionGroup tag="ul" appear @before-enter="beforeEnter" @enter="enter">
+            <List
+              v-for="(list, index) of patrimoine.rows"
+              :key="index"
+              :title="list.title"
+              :rows="list.rows"
+              :index="index"
+              :data-index="index"
+              :total-amount="patrimoine.getTotal(index)"
+              :use-cashflow-store="false"
+            />
+          </TransitionGroup>
         </el-space>
       </main>
     </div>
@@ -35,6 +38,24 @@ import List from "../components/List.vue";
 import ListRecap from "../components/ListRecap.vue";
 import { onMounted } from "vue";
 import { usePatrimoineStore } from "../stores/patrimoine";
+import gsap from 'gsap';
+
+const beforeEnter = (el: any) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(100px)'
+}
+
+const enter = (el: Element, done: () => void) => {
+  console.log(el)
+  gsap.to(el, {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    onComplete: done,
+    delay: (el as any).dataset.index * 0.4,
+
+  })
+}
 // const test1 = ref<typeof Buttoncta>();
 onMounted(() => {
   // console.log(test1.value);
