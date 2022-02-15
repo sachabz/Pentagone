@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-white">
-    <ul class="text-gray-700">
+  <div>
+    <ul>
       <li v-for="(row, index) of rows" :key="index">
-        <el-icon v-if="showIcon === true">
-          <home-filled />
+        <el-icon v-if="showIcon === true && icon !== undefined">
+          <component :is="icon" />
         </el-icon>
-        <p>- {{ row }}</p>
+        <p>{{ row }}</p>
       </li>
     </ul>
   </div>
@@ -13,16 +13,18 @@
 
 <script setup lang="ts">
 import { defineProps, withDefaults } from "vue";
-import { HomeFilled } from "@element-plus/icons-vue";
 
 interface Props {
   rows?: string[];
   index?: number;
-  showIcon: boolean;
+  showIcon?: boolean;
+  icon?: any;
 }
 withDefaults(defineProps<Props>(), {
   rows: () => [],
   index: 0,
+  icon: undefined,
+  showIcon: false,
 });
 
 </script>
@@ -30,13 +32,7 @@ withDefaults(defineProps<Props>(), {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  // display: inline-block;
-  margin: 0 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  list-style: circle;
+  padding-left: 3rem;
 }
 </style>

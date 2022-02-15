@@ -1,18 +1,5 @@
 <template>
-  <div class="bg-title padding-tittle size-tittle">
-    <el-row :gutter="20">
-      <el-col :span="8">
-        <div class="grid-content"></div>
-      </el-col>
-      <el-col :span="6" class="border-title">
-        <div class="grid-content"></div>
-        <h1 class="title-color">{{ title }}</h1>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content"></div>
-      </el-col>
-    </el-row>
-  </div>
+  <h1 class="title">{{ title }}</h1>
 </template>
 
 <script setup lang="ts">
@@ -29,26 +16,13 @@ withDefaults(defineProps<Props>(), {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.padding-tittle {
-  padding-top: 80px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.size-tittle {
-  font-size: 40px;
-}
-
-.bg-title {
-  background-color: #091e57;
-}
-
-.border-title {
-  border-left: 1px solid #cad8ff;
-}
-
-.title-color {
-  color: #cad8ff;
+.title {
+  font-size: 3rem;
+  padding-top: 60px;
+  padding-bottom: 0px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: #e1e9ff;
+  text-align: start;
 }
 </style>

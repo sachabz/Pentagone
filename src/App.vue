@@ -12,23 +12,6 @@ import { RouterView } from "vue-router";
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 .el-message-box {
   width: calc(95% - 40px) !important;
   max-width: 420px;
@@ -60,6 +43,21 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 720px) {
+  html,
+  body {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html,
+  body {
+    font-size: 10px;
+  }
 }
 
 main {

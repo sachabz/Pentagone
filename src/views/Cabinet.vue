@@ -3,22 +3,25 @@
     <div class="padding-bottom-cabinet">
       <Navbar />
       <div class="content">
-        <TitleSection title="LE CABINET" />
-        <!-- <ImageSection image="../../assets/cabinet2.jpg" /> -->
-        <img scr="../assets/cabinet2.png" />
-        <SubTitleSection
-          title="3 ASSOCIÉS, 3 EXPERTISES"
-          content="PENTAGONE FINANCE est un cabinet de conseil créé par 3 associés, chacun expert dans son domaine : 
+        <Section>
+          <TitleSection title="LE CABINET" />
+          <ImageSection :image="Cabinet2Img" fullscreen />
 
--Ingénierie patrimoniale 
-
--Investissement immobilier 
-
--Investissement financier  
-
-Les associés sont issus de grandes institutions de la gestion de patrimoine et de la gestion de fortune, où ils ont acquis un véritable savoir-faire dans ces différents domaines.
-"
-        />
+          <TitleSection title="3 ASSOCIÉS, 3 EXPERTISES" />
+          <ParagraphSection>
+            <p>PENTAGONE FINANCE est un cabinet de conseil créé par 3 associés, chacun expert dans son domaine :</p>
+            <ParagrapheList :icon="HomeFilled" :rows="expertises" />
+            <p>Les associés sont issus de grandes institutions de la gestion de patrimoine et de la gestion de fortune, où ils ont acquis un véritable savoir-faire dans ces différents domaines.</p>
+          </ParagraphSection>
+        </Section>
+        <Section fullpage>
+          <TitleSection title="3 associés" />
+          <ParagraphSection>
+            <p>PENTAGONE FINANCE est un cabinet de conseil créé par 3 associés, chacun expert dans son domaine :</p>
+            <ParagrapheList :icon="HomeFilled" :rows="expertises" />
+            <p>Les associés sont issus de grandes institutions de la gestion de patrimoine et de la gestion de fortune, où ils ont acquis un véritable savoir-faire dans ces différents domaines.</p>
+          </ParagraphSection>
+        </Section>
       </div>
     </div>
   </div>
@@ -26,12 +29,18 @@ Les associés sont issus de grandes institutions de la gestion de patrimoine et 
 
 
 <script setup lang="ts">
+import Cabinet2Img from "@/assets/cabinet2.jpg";
 import Navbar from "../components/Navbar.vue";
 import TitleSection from "@/components/Utils/TitleSection.vue";
-// import ImageSection from "../components/Utils/ImageSection.vue";
-import SubTitleSection from "@/components/Utils/SubTitleSection.vue";
+import ImageSection from "../components/Utils/ImageSection.vue";
+// import SubTitleSection from "@/components/Utils/SubTitleSection.vue";
+import Section from "@/components/Utils/Section.vue";
+import ParagrapheList from "@/components/Utils/ParagrapheList.vue";
+import { HomeFilled } from "@element-plus/icons-vue";
+import { ref } from "vue";
+import ParagraphSection from "../components/Utils/ParagraphSection.vue";
 
-
+const expertises = ref(["Ingénierie patrimoniale", "Investissement immobilier", "Investissement financier"])
 
 </script>
 
@@ -48,5 +57,9 @@ import SubTitleSection from "@/components/Utils/SubTitleSection.vue";
 
 .padding-bottom-cabinet {
   padding-bottom: 30px;
+}
+ul {
+  list-style: circle;
+  padding-left: 3rem;
 }
 </style>

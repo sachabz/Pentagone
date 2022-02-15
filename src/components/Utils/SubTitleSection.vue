@@ -6,8 +6,10 @@
       </el-col>
       <el-col :span="8" class="border-title-left">
         <div class="grid-content"></div>
-        <h1 class="title-color size-tittle">{{ title }}</h1>
-        <p class="content-color padding-content size-content">{{ content }}</p>
+        <h1 class="title-color size-title text-align-start">{{ title }}</h1>
+        <p class="content-color padding-content size-content text-align-start">
+          <slot />
+        </p>
       </el-col>
       <el-col :span="4">
         <div class="grid-content"></div>
@@ -21,11 +23,11 @@ import { defineProps, withDefaults } from "vue";
 
 interface Props {
   title?: string;
-  content?: string;
+
 }
 withDefaults(defineProps<Props>(), {
   title: "Titre",
-  content: "Contenu",
+
 });
 
 </script>
@@ -33,8 +35,12 @@ withDefaults(defineProps<Props>(), {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .padding-all {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+.text-align-start {
+  text-align: left;
 }
 
 .padding-content {
@@ -42,12 +48,12 @@ withDefaults(defineProps<Props>(), {
   padding-bottom: 60px;
 }
 
-.size-tittle {
-  font-size: 30px;
+.size-title {
+  font-size: 3rem;
 }
 
 .size-content {
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .bg-title {
@@ -62,8 +68,11 @@ withDefaults(defineProps<Props>(), {
   border-bottom: 1px solid #cad8ff;
 }
 
-.title-color,
 .content-color {
   color: #cad8ff;
+}
+
+.title-color {
+  color: #e1e9ff;
 }
 </style>

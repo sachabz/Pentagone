@@ -1,5 +1,5 @@
 <template>
-  <div class="image">
+  <div class="image" :class="{ fullscreen }">
     <img :src="image" />
   </div>
 </template>
@@ -9,9 +9,11 @@ import { defineProps, withDefaults } from "vue";
 
 interface Props {
   image?: string;
+  fullscreen?: boolean;
 }
 withDefaults(defineProps<Props>(), {
   image: "https://via.placeholder.com/150",
+  fullscreen: false,
 });
 
 </script>
@@ -21,7 +23,11 @@ withDefaults(defineProps<Props>(), {
 .image {
   // background-size: cover;
   // width: 100%;
-  // min-height: 20vh;
-  // max-height: 30vh;
+  min-height: 20vh;
+  max-height: 50vh;
+  overflow: hidden;
+  &.fullscreen {
+    margin-left: -33.33vw;
+  }
 }
 </style>
