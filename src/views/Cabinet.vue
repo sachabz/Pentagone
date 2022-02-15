@@ -9,17 +9,32 @@
 
           <TitleSection title="3 ASSOCIÉS, 3 EXPERTISES" />
           <ParagraphSection>
-            <p>PENTAGONE FINANCE est un cabinet de conseil créé par 3 associés, chacun expert dans son domaine :</p>
-            <ParagrapheList :icon="HomeFilled" :rows="expertises" />
-            <p>Les associés sont issus de grandes institutions de la gestion de patrimoine et de la gestion de fortune, où ils ont acquis un véritable savoir-faire dans ces différents domaines.</p>
+            <ParagraphText>
+              <p>PENTAGONE FINANCE est un cabinet de conseil créé par 3 associés, chacun expert dans son domaine :</p>
+            </ParagraphText>
+            <ParagraphText>
+              <ParagrapheList :icon="HomeFilled" :rows="expertises" />
+            </ParagraphText>
+            <ParagraphText>
+              <p>Les associés sont issus de grandes institutions de la gestion de patrimoine et de la gestion de fortune, où ils ont acquis un véritable savoir-faire dans ces différents domaines.</p>
+            </ParagraphText>
           </ParagraphSection>
         </Section>
         <Section fullpage>
-          <TitleSection title="3 associés" />
+          <TitleSection title="7 GRANDS OBJECTIFS" />
           <ParagraphSection>
-            <p>PENTAGONE FINANCE est un cabinet de conseil créé par 3 associés, chacun expert dans son domaine :</p>
-            <ParagrapheList :icon="HomeFilled" :rows="expertises" />
-            <p>Les associés sont issus de grandes institutions de la gestion de patrimoine et de la gestion de fortune, où ils ont acquis un véritable savoir-faire dans ces différents domaines.</p>
+            <ParagraphText>
+              <p>Grâce à ces différentes compétences, le cabinet PENTAGONE FINANCE pourra vous accompagner à atteindre vos différents objectifs de vie, et bien sûr vos différents objectifs financiers :</p>
+            </ParagraphText>
+            <ParagraphText>
+              <ParagrapheList :icon="HomeFilled" :rows="objectifs" />
+            </ParagraphText>
+            <ParagraphText>
+              <p>L’objectif du cabinet PENTAGONE FINANCE est de vous offrir un service bien supérieur à celui de votre banque, grâce à son expertise poussée en ingénierie financière et patrimoniale, mais aussi grâce à un choix méticuleux de ses différents partenaires.</p>
+            </ParagraphText>
+            <ParagraphText>
+              <p>Le cabinet PENTAGONE FINANCE est un cabinet indépendant, ce qui lui permet d’aller chercher ce qui se fait de mieux sur le marché de la gestion de patrimoine, afin de toujours mieux servir ses clients.</p>
+            </ParagraphText>
           </ParagraphSection>
         </Section>
       </div>
@@ -33,14 +48,15 @@ import Cabinet2Img from "@/assets/cabinet2.jpg";
 import Navbar from "../components/Navbar.vue";
 import TitleSection from "@/components/Utils/TitleSection.vue";
 import ImageSection from "../components/Utils/ImageSection.vue";
-// import SubTitleSection from "@/components/Utils/SubTitleSection.vue";
 import Section from "@/components/Utils/Section.vue";
 import ParagrapheList from "@/components/Utils/ParagrapheList.vue";
 import { HomeFilled } from "@element-plus/icons-vue";
 import { ref } from "vue";
 import ParagraphSection from "../components/Utils/ParagraphSection.vue";
+import ParagraphText from "../components/Utils/ParagraphText.vue";
 
 const expertises = ref(["Ingénierie patrimoniale", "Investissement immobilier", "Investissement financier"])
+const objectifs = ref(["Vous constituer un patrimoine", "Vous constituer des revenus grâce à vos investissements", "Préparer votre retraite (ou partir en retraite plus tôt)", "Payer moins d’impôts (IR, IFI, IS, nous optimisons votre fiscalité globale)", "Protéger votre famille", "Optimiser la transmission de votre patrimoine", "Vous avez d’autres projets : nous vous écoutons sur vos différents projets de vie, et nous vous aidons à choisir les meilleures stratégies patrimoniales pour réussir votre projet sur le plan financier"])
 
 </script>
 

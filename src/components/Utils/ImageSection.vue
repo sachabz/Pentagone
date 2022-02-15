@@ -28,6 +28,7 @@ withDefaults(defineProps<Props>(), {
   overflow: hidden;
   &.fullscreen {
     margin-left: -33.33vw;
+    margin-right: -33.33vw;
   }
 }
 </style>

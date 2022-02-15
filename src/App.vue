@@ -43,7 +43,9 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 12px;
+  // font-family: "Roboto";
+  font-family: "NHaasGroteskTXPro", "Lucida Sans", Tahoma, sans-serif;
 }
 
 @media screen and (max-width: 720px) {

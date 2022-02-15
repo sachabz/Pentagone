@@ -19,7 +19,7 @@ withDefaults(defineProps<Props>(), {
 .title {
   font-size: 3rem;
   padding-top: 60px;
-  padding-bottom: 0px;
+  padding-bottom: 30px;
   padding-left: 2rem;
   padding-right: 2rem;
   color: #e1e9ff;

@@ -21,13 +21,14 @@ withDefaults(defineProps<Props>(), {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .section {
-  background-color: #091e57;
-
+  background-color: #06112e;
   padding-left: 33.3vw;
+  padding-right: 33.33vw;
   color: #e1e9ff;
   border-bottom: 1px solid #cad8ff;
   &.fullpage {
-    padding-left: 0;
+    padding-left: 13.3vw;
+    padding-right: 13.3vw;
     .section-content {
       border-left: none;
     }
