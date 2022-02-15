@@ -52,7 +52,7 @@ const enter = (el: Element, done: () => void) => {
     y: 0,
     duration: 0.8,
     onComplete: done,
-    delay: (el as any).dataset.index * 0.4,
+    delay: (el as any).dataset.index * 0.2,
 
   })
 }

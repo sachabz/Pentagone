@@ -134,5 +134,6 @@ const open = (row: Row) => {
 
 .blue-link {
   color: #00c0ff;
+  cursor: pointer;
 }
 </style>
