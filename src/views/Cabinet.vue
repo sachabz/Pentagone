@@ -27,7 +27,7 @@
               <p>Grâce à ces différentes compétences, le cabinet PENTAGONE FINANCE pourra vous accompagner à atteindre vos différents objectifs de vie, et bien sûr vos différents objectifs financiers :</p>
             </ParagraphText>
             <ParagraphText>
-              <ParagrapheList :icon="HomeFilled" :rows="objectifs" />
+              <DynamiqueList :rows="objs" />
             </ParagraphText>
             <ParagraphText>
               <p>L’objectif du cabinet PENTAGONE FINANCE est de vous offrir un service bien supérieur à celui de votre banque, grâce à son expertise poussée en ingénierie financière et patrimoniale, mais aussi grâce à un choix méticuleux de ses différents partenaires.</p>
@@ -54,10 +54,19 @@ import { HomeFilled } from "@element-plus/icons-vue";
 import { ref } from "vue";
 import ParagraphSection from "../components/Utils/ParagraphSection.vue";
 import ParagraphText from "../components/Utils/ParagraphText.vue";
+import DynamiqueList from "@/components/Utils/DynamiqueList.vue";
 
 const expertises = ref(["Ingénierie patrimoniale", "Investissement immobilier", "Investissement financier"])
-const objectifs = ref(["Vous constituer un patrimoine", "Vous constituer des revenus grâce à vos investissements", "Préparer votre retraite (ou partir en retraite plus tôt)", "Payer moins d’impôts (IR, IFI, IS, nous optimisons votre fiscalité globale)", "Protéger votre famille", "Optimiser la transmission de votre patrimoine", "Vous avez d’autres projets : nous vous écoutons sur vos différents projets de vie, et nous vous aidons à choisir les meilleures stratégies patrimoniales pour réussir votre projet sur le plan financier"])
+const objs = ref([
 
+  { title: "Vous constituer un patrimoine", content: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source." },
+  { title: "Vous constituer des revenus grâce à vos investissements", content: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source." },
+  { title: "Préparer votre retraite (ou partir en retraite plus tôt)", content: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source." },
+  { title: "Payer moins d’impôts (IR, IFI, IS, nous optimisons votre fiscalité globale) ", content: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source." },
+  { title: "Protéger votre famille", content: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source." },
+  { title: "Optimiser la transmission de votre patrimoine", content: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source." },
+  { title: "Vous avez d’autres projets", content: "Nous vous écoutons sur vos différents projets de vie, et nous vous aidons à choisir les meilleures stratégies patrimoniales pour réussir votre projet sur le plan financier" }
+])
 </script>
 
 <style scoped>

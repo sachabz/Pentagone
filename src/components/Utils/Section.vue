@@ -28,7 +28,7 @@ withDefaults(defineProps<Props>(), {
   border-bottom: 1px solid #cad8ff;
   &.fullpage {
     padding-left: 13.3vw;
-    padding-right: 13.3vw;
+    padding-right: 33.3vw;
     .section-content {
       border-left: none;
     }
