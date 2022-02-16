@@ -27,6 +27,7 @@
               <p>Grâce à ces différentes compétences, le cabinet PENTAGONE FINANCE pourra vous accompagner à atteindre vos différents objectifs de vie, et bien sûr vos différents objectifs financiers :</p>
             </ParagraphText>
             <ParagraphText>
+              <!-- <ScrollAnimation /> -->
               <DynamiqueList :rows="objs" />
             </ParagraphText>
             <ParagraphText>
@@ -55,6 +56,7 @@ import { ref } from "vue";
 import ParagraphSection from "../components/Utils/ParagraphSection.vue";
 import ParagraphText from "../components/Utils/ParagraphText.vue";
 import DynamiqueList from "@/components/Utils/DynamiqueList.vue";
+// import ScrollAnimation from "@/components/Utils/ScrollAnimation.vue";
 
 const expertises = ref(["Ingénierie patrimoniale", "Investissement immobilier", "Investissement financier"])
 const objs = ref([
@@ -75,7 +77,7 @@ const objs = ref([
 }
 
 .bg-cabinet {
-  background-color: #091e57;
+  background-color: #06112e;
   width: 100%;
   min-height: 100vh;
 }

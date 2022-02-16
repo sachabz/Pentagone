@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="dynamique-list">
     <ul>
       <li v-for="(row, index) of rows" :key="index">
         <h2>{{ row.title }}</h2>
         <p>{{ row.content }}</p>
-        <el-divider></el-divider>
+        <el-divider class="divider"></el-divider>
       </li>
     </ul>
   </div>
@@ -39,5 +39,14 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
   padding-bottom: 10px;
+}
+
+.divider {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+p {
+  padding-bottom: 30px;
 }
 </style>
