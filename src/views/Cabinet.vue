@@ -28,11 +28,11 @@
             </ParagraphText>
             <ParagraphText>
               <el-row :gutter="20">
-                <el-col :span="6">
+                <el-col :span="6" style="overflow: hidden;">
                   <ScrollAnimation />
                 </el-col>
                 <el-col :span="18">
-                  <DynamiqueList :rows="objs" />
+                  <DynamiqueList :rows="objs" class="objectifs" />
                 </el-col>
               </el-row>
             </ParagraphText>
