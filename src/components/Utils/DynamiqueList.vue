@@ -1,7 +1,7 @@
 <template>
   <div class="dynamique-list">
     <ul>
-      <li v-for="(row, index) of rows" :key="index">
+      <li v-for="(row, index) of rows" :key="index" :class="`step${index}`">
         <h2>{{ row.title }}</h2>
         <p>{{ row.content }}</p>
         <el-divider class="divider"></el-divider>
@@ -19,10 +19,8 @@ interface Row {
 
 interface Props {
   rows?: Row[];
-  index?: number;
 }
 withDefaults(defineProps<Props>(), {
-  index: 0,
   rows: () => [],
 });
 
