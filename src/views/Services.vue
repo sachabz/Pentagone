@@ -7,7 +7,7 @@
           <TitleSection title="NOS SERVICES" />
           <ImageSection :image="CabinetImg" fullscreen />
         </Section>
-        <Tab :labeltab="labeltab" :tab="tab" />
+        <Tab />
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@ import Section from "@/components/Utils/Section.vue";
 import ParagrapheList from "@/components/Utils/ParagrapheList.vue";
 import { ref } from "vue";
 import ParagraphSection from "../components/Utils/ParagraphSection.vue";
-import Tab from "@/components/Utils/Tab.vue";
+import Tab from "@/components/Tab.vue";
 
 const labeltab = ref(["Audit Patrimonial Stratégique", "Investissement Immobilier", "Investissement Financier "]);
 const tab = ref(["Audit Patrimonial Stratégique", "Investissement Immobilier", "Investissement Financier "]);
