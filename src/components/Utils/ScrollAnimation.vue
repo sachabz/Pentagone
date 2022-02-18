@@ -1,8 +1,8 @@
 <template>
   <div class="svg">
-    <div class="box blue a"></div>
-    <div class="box orange b"></div>
-    <div class="box grey c"></div>
+    <div class="box a"></div>
+    <div class="box b"></div>
+    <div class="box c"></div>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ gsap.defaults({ ease: "none" });
 
 onMounted(() => {
   nextTick(() => {
-    rotation()
+    rotation();
   }
   )
 })
@@ -38,6 +38,7 @@ onBeforeUnmount(() => {
 }
 )
 
+
 let animation: GSAPTween | undefined = undefined;
 let animation2: GSAPTween | undefined = undefined;
 let animation3: GSAPTween | undefined = undefined;
@@ -49,7 +50,7 @@ const rotation = () => {
       trigger: ".objectifs",
       start: "top center",
       end: "bottom center",
-      markers: true,
+      markers: false,
       scrub: true,
       pin: false,
       toggleActions: "restart pause reverse pause"
@@ -63,14 +64,13 @@ const rotation = () => {
       start: "top center",
       endTrigger: ".objectifs",
       end: "bottom center",
-      markers: true,
+      markers: false,
       scrub: true,
       pin: false,
       toggleActions: "restart pause reverse pause"
     },
     startAt: { opacity: 0, y: -400 },
     rotation: 360,
-    duration: 3,
     opacity: 1,
     y: 0,
   });
@@ -80,14 +80,13 @@ const rotation = () => {
       endTrigger: ".objectifs",
       start: "top center",
       end: "bottom center",
-      markers: true,
+      markers: false,
       scrub: true,
       pin: false,
       toggleActions: "restart pause reverse pause"
     },
     startAt: { opacity: 0, y: -400 },
     rotation: 360,
-    duration: 3,
     opacity: 1,
     y: 0,
   });
@@ -97,7 +96,7 @@ const rotation = () => {
       trigger: ".step2",
       start: "top center",
       end: "bottom center",
-      markers: true,
+      markers: false,
       scrub: true,
       pin: false,
       toggleActions: "restart pause reverse pause"
@@ -171,12 +170,12 @@ const rotation = () => {
 }
 
 .box:nth-child(1) {
-  background-color: rgb(0, 0, 49);
+  background-color: rgb(193, 193, 248);
 }
 .box:nth-child(2) {
-  background-color: rgb(107, 107, 243);
+  background-color: rgb(90, 193, 253);
 }
 .box:nth-child(3) {
-  background-color: rgb(58, 58, 94);
+  background-color: rgb(30, 30, 104);
 }
 </style>

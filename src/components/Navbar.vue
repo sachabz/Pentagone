@@ -15,21 +15,19 @@
         </router-link>
       </el-menu-item>
       <router-link to="/cabinet">
-        <el-menu-item index="/cabinet">Le cabinet</el-menu-item>
+        <el-menu-item index="/cabinet" :router="true">Le cabinet</el-menu-item>
       </router-link>
-      <router-link to="/">
+      <router-link to="/services">
         <el-menu-item index="3">Nos services</el-menu-item>
       </router-link>
       <el-sub-menu index="4">
         <template #title>Calculator</template>
-        <router-link to="/calculator">
-          <el-menu-item index="4-1">Vision Globale</el-menu-item>
-        </router-link>
+        <el-menu-item index="/calculator" :router="true">Vision Globale</el-menu-item>
         <router-link to="/cashflow">
-          <el-menu-item index="4-2">Cashflow</el-menu-item>
+          <el-menu-item index="/cashflow">Cashflow</el-menu-item>
         </router-link>
         <router-link to="/patrimoine">
-          <el-menu-item index="4-3">Patrimoine</el-menu-item>
+          <el-menu-item index="/patrimoine">Patrimoine</el-menu-item>
         </router-link>
       </el-sub-menu>
     </el-menu>
@@ -43,21 +41,15 @@ import "../assets/logoPFv2.png";
 const activeIndex = ref("1");
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
+
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-// .sticky {
-//   position: fixed;
-//   top: 0;
-//   width: 100vw;
-//   z-index: 1;
-//   overflow: hidden;
-//   height: fit-content;
-//   max-width: 100vw;
-// }
-
-// .border-nav {
-// }
+.el-menu {
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
 </style>

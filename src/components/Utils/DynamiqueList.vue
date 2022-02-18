@@ -31,6 +31,7 @@ withDefaults(defineProps<Props>(), {
 ul {
   list-style: decimal;
   padding-left: 3rem;
+  color: #e1e9ff0c;
 }
 
 h2 {

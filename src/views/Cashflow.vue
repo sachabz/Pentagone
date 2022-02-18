@@ -91,14 +91,15 @@ onMounted(() => {
   background-image: url("../assets/bg2.jpg");
   background-size: cover;
   width: 100%;
-  margin-top: 60px;
   min-height: 100vh;
+  align-items: center;
+  align-content: center;
+  text-align: center;
 }
 
 .bg-black {
   background-color: rgba(0, 0, 0, 0.363);
   width: 100%;
-  margin-top: 60px;
   min-height: 100vh;
 }
 </style>

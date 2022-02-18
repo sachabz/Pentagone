@@ -33,11 +33,14 @@
                 </el-col>
                 <el-col :span="18">
                   <DynamiqueList :rows="objs" class="objectifs" />
+                  <ScrollText />
                 </el-col>
               </el-row>
             </ParagraphText>
             <ParagraphText>
-              <p>L’objectif du cabinet PENTAGONE FINANCE est de vous offrir un service bien supérieur à celui de votre banque, grâce à son expertise poussée en ingénierie financière et patrimoniale, mais aussi grâce à un choix méticuleux de ses différents partenaires.</p>
+              <p
+                class="end-scroll-text"
+              >L’objectif du cabinet PENTAGONE FINANCE est de vous offrir un service bien supérieur à celui de votre banque, grâce à son expertise poussée en ingénierie financière et patrimoniale, mais aussi grâce à un choix méticuleux de ses différents partenaires.</p>
             </ParagraphText>
             <ParagraphText>
               <p>Le cabinet PENTAGONE FINANCE est un cabinet indépendant, ce qui lui permet d’aller chercher ce qui se fait de mieux sur le marché de la gestion de patrimoine, afin de toujours mieux servir ses clients.</p>
@@ -63,6 +66,7 @@ import ParagraphSection from "../components/Utils/ParagraphSection.vue";
 import ParagraphText from "../components/Utils/ParagraphText.vue";
 import DynamiqueList from "@/components/Utils/DynamiqueList.vue";
 import ScrollAnimation from "@/components/Utils/ScrollAnimation.vue";
+import ScrollText from "@/components/Utils/ScrollText.vue";
 
 const expertises = ref(["Ingénierie patrimoniale", "Investissement immobilier", "Investissement financier"]);
 

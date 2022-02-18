@@ -4,6 +4,8 @@ import Calculator from "@/views/Calculator.vue";
 import Cashflow from "@/views/Cashflow.vue";
 import Patrimoine from "@/views/Patrimoine.vue";
 import CabinetVue from "@/views/Cabinet.vue";
+import ServicesVue from "@/views/Services.vue";
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +19,11 @@ const router = createRouter({
       path: "/cabinet",
       name: "cabinet",
       component: CabinetVue,
+    },
+    {
+      path: "/services",
+      name: "services",
+      component: ServicesVue,
     },
     {
       path: "/calculator",
