@@ -8,48 +8,40 @@
       text-color="#e1e9ff"
       active-text-color="#cad8ff"
       @select="handleSelect"
+      :router="true"
     >
-      <el-menu-item index="1">
-        <router-link to="/">
-          <img src="../assets/logoPFv3.png" width="50" height="50" />
-        </router-link>
+      <el-menu-item index="/">
+        <img src="../assets/logoPFv3.png" width="50" height="50" />
       </el-menu-item>
-      <router-link to="/cabinet">
-        <el-menu-item index="/cabinet" :router="true">Le cabinet</el-menu-item>
-      </router-link>
-      <router-link to="/services">
-        <el-menu-item index="3">Nos services</el-menu-item>
-      </router-link>
-      <el-sub-menu index="4">
+      <div class="spacer"></div>
+      <el-menu-item index="/cabinet">Le cabinet</el-menu-item>
+      <el-menu-item index="/services">Nos services</el-menu-item>
+      <el-sub-menu>
         <template #title>Calculator</template>
-        <el-menu-item index="/calculator" :router="true">Vision Globale</el-menu-item>
-        <router-link to="/cashflow">
-          <el-menu-item index="/cashflow">Cashflow</el-menu-item>
-        </router-link>
-        <router-link to="/patrimoine">
-          <el-menu-item index="/patrimoine">Patrimoine</el-menu-item>
-        </router-link>
+        <el-menu-item index="/calculator">Vision Globale</el-menu-item>
+        <el-menu-item index="/cashflow">Cashflow</el-menu-item>
+        <el-menu-item index="/patrimoine">Patrimoine</el-menu-item>
       </el-sub-menu>
+      <div class="spacer"></div>
     </el-menu>
   </el-affix>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
+import { useRoute } from "vue-router";
 import "../assets/logoPFv2.png";
-
-const activeIndex = ref("1");
+const { path } = useRoute();
+const activeIndex = ref(path);
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
-
+  activeIndex.value = key;
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.el-menu {
-  align-items: center;
-  align-content: center;
-  text-align: center;
+.spacer {
+  flex-grow: 1;
 }
 </style>

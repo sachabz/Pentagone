@@ -7,26 +7,15 @@
     active-text-color="#cad8ff"
   >
     <el-tabs tab-position="top" style="height: 200px" class="demo-tabs">
-      <el-tab-pane label="User">User gg</el-tab-pane>
-      <el-tab-pane label="Config">Config gg</el-tab-pane>
-      <el-tab-pane label="Role">Role</el-tab-pane>
-      <el-tab-pane label="Task">Task</el-tab-pane>
+      <el-tab-pane label="User" name="first">User</el-tab-pane>
+      <el-tab-pane label="Config" name="second">Config</el-tab-pane>
+      <el-tab-pane label="Role" name="third">Role</el-tab-pane>
+      <el-tab-pane label="Task" name="fourth">Task</el-tab-pane>
     </el-tabs>
   </el-affix>
 </template>
 
 <script lang="ts" setup>
-
-import { defineProps, withDefaults } from "vue";
-
-
-interface Props {
-  tabs?: string[];
-  labeltab: string[];
-}
-withDefaults(defineProps<Props>(), {
-  tabs: () => [],
-});
 
 </script>
 

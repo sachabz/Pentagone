@@ -11,12 +11,10 @@ import { defineProps, withDefaults } from "vue";
 
 interface Props {
   rows?: string[];
-  index?: number;
   showIcon: boolean;
 }
 withDefaults(defineProps<Props>(), {
   rows: () => [],
-  index: 0,
 });
 
 </script>
