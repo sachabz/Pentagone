@@ -1,5 +1,5 @@
 <template>
-  <el-card class="box-card bg-color-card maxwidth">
+  <el-card class="box-card maxwidth">
     <template #header>
       <div class="card-header">
         <span>{{ title }}</span>
@@ -93,7 +93,6 @@ const { title, subtitle, amountActif, amountPassif, titleAmountActif, titleAmoun
 
 .bg-blue {
   background-color: #0c1c52;
-  color: white;
   font-weight: bold;
   padding: 2px;
   border-radius: 30px;
@@ -103,13 +102,6 @@ const { title, subtitle, amountActif, amountPassif, titleAmountActif, titleAmoun
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-}
-
-.bg-color-card {
-  background-color: #e7f9ff;
-}
-
-.blue-link {
-  color: #00c0ff;
+  z-index: 1;
 }
 </style>

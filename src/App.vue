@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
+import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
-  <router-view v-slot="{ Component }">
-    <transition name="route" mode="out-in">
-      <component :is="Component"></component>
-    </transition>
-    <el-backtop />
-  </router-view>
+  <div>
+    <navbar />
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component"></component>
+      </transition>
+      <el-backtop />
+    </router-view>
+  </div>
 </template>
 
 <style lang="scss">
@@ -46,6 +50,7 @@ body {
   font-size: 12px;
   // font-family: "Roboto";
   font-family: "NHaasGroteskTXPro", "Lucida Sans", Tahoma, sans-serif;
+  background-color: #06112e;
 }
 
 @media screen and (max-width: 720px) {
@@ -60,10 +65,5 @@ body {
   body {
     font-size: 10px;
   }
-}
-
-main {
-  padding-left: 20px;
-  padding-right: 20px;
 }
 </style>

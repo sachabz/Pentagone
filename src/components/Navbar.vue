@@ -13,16 +13,14 @@
       <el-menu-item index="/">
         <img src="../assets/logoPFv3.png" width="50" height="50" />
       </el-menu-item>
-      <div class="spacer"></div>
       <el-menu-item index="/cabinet">Le cabinet</el-menu-item>
       <el-menu-item index="/services">Nos services</el-menu-item>
-      <el-sub-menu>
+      <el-sub-menu index="/calculator">
         <template #title>Calculator</template>
         <el-menu-item index="/calculator">Vision Globale</el-menu-item>
         <el-menu-item index="/cashflow">Cashflow</el-menu-item>
         <el-menu-item index="/patrimoine">Patrimoine</el-menu-item>
       </el-sub-menu>
-      <div class="spacer"></div>
     </el-menu>
   </el-affix>
 </template>
@@ -41,7 +39,4 @@ const handleSelect = (key: string, keyPath: string[]) => {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.spacer {
-  flex-grow: 1;
-}
 </style>

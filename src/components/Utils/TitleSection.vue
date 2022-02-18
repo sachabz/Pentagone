@@ -22,7 +22,7 @@ withDefaults(defineProps<Props>(), {
   padding-bottom: 30px;
   padding-left: 2rem;
   padding-right: 2rem;
-  color: #e1e9ff;
+  // color: #e1e9ff;
   text-align: start;
 }
 </style>

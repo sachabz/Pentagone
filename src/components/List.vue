@@ -14,9 +14,11 @@
       </el-col>
       <el-col :span="8">
         <div class="grid-content">
-          <el-icon :size="20" @click="open(row)">
-            <edit class="blue-link" />
-          </el-icon>
+          <el-button type="text">
+            <el-icon @click="open(row)">
+              <edit class="blue-link" />
+            </el-icon>
+          </el-button>
         </div>
       </el-col>
     </el-row>
@@ -52,14 +54,12 @@ interface Row {
 interface Props {
   title?: string;
   rows?: Row[];
-  index?: number;
   totalAmount?: number;
   useCashflowStore: boolean;
 }
 const props = withDefaults(defineProps<Props>(), {
   title: "Titre",
   rows: () => [],
-  index: 0,
   totalAmount: 0,
 });
 
@@ -101,7 +101,10 @@ const open = (row: Row) => {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+@use "sass:map";
+@import "@/styles/element/index.scss";
+
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -111,9 +114,10 @@ const open = (row: Row) => {
 }
 
 .total {
-  background-color: rgb(235, 235, 235);
+  background-color: lighten(map.get($card, "bg-color"), 15%);
   font-weight: bold;
   border: none;
+  border-radius: 5px;
 }
 
 .text {
@@ -130,10 +134,5 @@ const open = (row: Row) => {
   margin-right: auto;
   margin-top: 0px;
   margin-bottom: 20px;
-}
-
-.blue-link {
-  color: #00c0ff;
-  cursor: pointer;
 }
 </style>

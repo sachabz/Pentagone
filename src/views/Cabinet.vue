@@ -1,7 +1,6 @@
 <template>
   <div class="home bg-cabinet">
     <div class="padding-bottom-cabinet">
-      <Navbar />
       <div class="content">
         <Section>
           <TitleSection title="LE CABINET" />
@@ -55,7 +54,6 @@
 
 <script setup lang="ts">
 import Cabinet2Img from "@/assets/cabinet2.jpg";
-import Navbar from "../components/Navbar.vue";
 import TitleSection from "@/components/Utils/TitleSection.vue";
 import ImageSection from "../components/Utils/ImageSection.vue";
 import Section from "@/components/Utils/Section.vue";

@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <Navbar />
-    <main class="bg-black">
+    <main>
       <el-space direction="vertical padding-chart">
         <div style="height:300px;width: 300px;">
           <vue3-chart-js
@@ -34,7 +33,6 @@
 </template>
 
 <script lang="ts" setup>
-import Navbar from "../components/Navbar.vue";
 import Buttoncta from "../components/Utils/Buttoncta.vue";
 import { ref, onMounted } from "vue";
 import Vue3ChartJs from "@j-t-mcc/vue3-chartjs";
@@ -112,13 +110,13 @@ onMounted(() => {
 </script>
 <style scoped>
 .home {
-  background-image: url("../assets/bg4.jpg");
-  background-size: cover;
+  background-color: #06102d;
   width: 100%;
   min-height: 100vh;
   align-items: center;
   align-content: center;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .padding-chart {
@@ -128,10 +126,5 @@ onMounted(() => {
 
 .padding-button {
   padding-top: 20px;
-}
-.bg-black {
-  background-color: rgba(0, 0, 0, 0.363);
-  width: 100%;
-  min-height: 100vh;
 }
 </style>

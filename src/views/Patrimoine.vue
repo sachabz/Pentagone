@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <div class="bg-black">
-      <Navbar />
+    <div>
       <!-- <Buttoncta nom="Voir les détails" ref="test1" /> -->
       <main>
         <el-space wrap fill alignment="flex-start">
@@ -33,7 +32,6 @@
 </template>
 
 <script lang="ts" setup>
-import Navbar from "../components/Navbar.vue";
 import List from "../components/List.vue";
 import ListRecap from "../components/ListRecap.vue";
 import { onMounted } from "vue";
@@ -86,18 +84,12 @@ const patrimoine = usePatrimoineStore();
 </script>
 <style scoped>
 .home {
-  background-image: url("../assets/bg2.jpg");
-  background-size: cover;
+  background-color: #06102d;
   width: 100%;
   min-height: 100vh;
   align-items: center;
   align-content: center;
   text-align: center;
-}
-
-.bg-black {
-  background-color: rgba(0, 0, 0, 0.363);
-  width: 100%;
-  min-height: 100vh;
+  padding-bottom: 30px;
 }
 </style>

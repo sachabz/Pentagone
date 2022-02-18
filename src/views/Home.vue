@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <div class="bg-black">
-      <Navbar />
       <Banniere />
       <EmailVue />
       <SectionHomeMetrics />
@@ -10,7 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import Navbar from "../components/Navbar.vue";
 import Banniere from "@/components/Home/Banniere.vue";
 import EmailVue from "@/components/EmailVue.vue";
 import SectionHomeMetrics from "@/components/Home/SectionHomeMetrics.vue";

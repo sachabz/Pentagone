@@ -1,0 +1,21 @@
+// styles/element/index.scss
+/* just override what you need */
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': #275AD8,
+    ),
+  ),
+  $text-color : (
+    'primary': #e1e9ff,
+  ),
+  $card: (
+    'border-color': #cad8ff,
+    'bg-color': rgb(6, 16, 45),
+  )
+);
+
+// If you just import on demand, you can ignore the following content.
+// if you want to import all styles:
+@use "element-plus/theme-chalk/src/index.scss" as *;
+
